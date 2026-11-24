@@ -1,0 +1,268 @@
+:root {
+  --mn-azul: #2563eb;
+  --mn-azul-hover: #1d4ed8;
+  --mn-verde: #16a34a;
+  --mn-rojo: #dc2626;
+  --mn-texto: #111827;
+  --mn-texto-suave: #6b7280;
+  --mn-borde: #e5e7eb;
+  --mn-fondo: #f5f7fb;
+  --mn-blanco: #ffffff;
+
+  /* Colores de los módulos del escritorio */
+  --mod-usuarios-bg: #f3e8ff;
+  --mod-usuarios-fg: #9333ea;
+  --mod-negocio-bg: #bfdbfe;
+  --mod-negocio-fg: #1d4ed8;
+  --mod-inventario-bg: #dcfce7;
+  --mod-inventario-fg: #15803d;
+  --mod-movimientos-bg: #fef3c7;
+  --mod-movimientos-fg: #ea580c;
+  --mod-reportes-bg: #dbeafe;
+  --mod-reportes-fg: #2563eb;
+  --mod-cartera-bg: #fce7f3;
+  --mod-cartera-fg: #db2777;
+  --mod-ventas-bg: #e0e7ff;
+  --mod-ventas-fg: #6d28d9;
+
+  --bs-primary: var(--mn-azul);
+  --bs-primary-rgb: 37, 99, 235;
+  --bs-body-font-family:
+    Inter, "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --bs-body-color: var(--mn-texto);
+}
+
+body {
+  background: var(--mn-fondo);
+}
+
+/* encabezado, contenido y pie al fondo */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.app-main {
+  flex: 1 0 auto;
+  padding: 16px;
+}
+
+/* Encabezado */
+.app-header {
+  background: var(--mn-blanco);
+  border-bottom: 1px solid var(--mn-borde);
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+.app-header .container-fluid {
+  width: 100%;
+}
+.app-brand {
+  color: var(--mn-azul);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.app-brand:hover {
+  color: var(--mn-azul-hover);
+}
+
+.status-online {
+  color: var(--mn-verde);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-menu-btn {
+  color: var(--mn-texto-suave);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border: 0;
+}
+.user-menu-btn:hover,
+.user-menu-btn:focus,
+.user-menu-btn.show {
+  color: var(--mn-texto);
+  background: transparent;
+}
+.user-menu-btn::after {
+  display: none;
+} /* sin flecha, como en el diseño */
+
+.user-dropdown {
+  min-width: 190px;
+  border: 1px solid var(--mn-borde);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.1);
+  padding: 6px;
+  font-size: 0.8rem;
+}
+.user-dropdown .dropdown-item {
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.user-dropdown .item-cuenta {
+  color: var(--mn-texto-suave);
+}
+.user-dropdown .item-salir {
+  color: var(--mn-rojo);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.user-dropdown .item-salir:hover {
+  background: #fef2f2;
+  color: var(--mn-rojo);
+}
+.user-dropdown .dropdown-divider {
+  margin: 4px 0;
+}
+
+/* Inicio de sesión */
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  margin-top: 0;
+  background: var(--mn-blanco);
+  border: 1px solid var(--mn-borde);
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(17, 24, 39, 0.04);
+}
+.login-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-subtitle {
+  font-size: 0.8rem;
+  color: var(--mn-texto-suave);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-card .form-label {
+  font-size: 0.75rem;
+  color: var(--mn-texto-suave);
+  margin-bottom: 4px;
+}
+.login-card .form-control {
+  font-size: 0.85rem;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border-color: var(--mn-borde);
+}
+.login-card .form-control:focus {
+  border-color: var(--mn-azul);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.login-card .btn-primary {
+  --bs-btn-bg: var(--mn-azul);
+  --bs-btn-border-color: var(--mn-azul);
+  --bs-btn-hover-bg: var(--mn-azul-hover);
+  --bs-btn-hover-border-color: var(--mn-azul-hover);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Módulos */
+.pagina-escritorio .app-main {
+  padding-top: 72px;
+}
+.modulos-grid {
+  max-width: 760px;
+  margin-inline: auto;
+  row-gap: 40px !important;
+  padding: 0;
+}
+.modulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--mn-texto);
+  transition: transform 0.15s ease;
+}
+.modulo:hover {
+  transform: translateY(-3px);
+  color: var(--mn-texto);
+}
+.modulo:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+.modulo-icono {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+}
+.modulo-nombre {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.mod-usuarios {
+  background: var(--mod-usuarios-bg);
+  color: var(--mod-usuarios-fg);
+}
+.mod-negocio {
+  background: var(--mod-negocio-bg);
+  color: var(--mod-negocio-fg);
+}
+.mod-inventario {
+  background: var(--mod-inventario-bg);
+  color: var(--mod-inventario-fg);
+}
+.mod-movimientos {
+  background: var(--mod-movimientos-bg);
+  color: var(--mod-movimientos-fg);
+}
+.mod-reportes {
+  background: var(--mod-reportes-bg);
+  color: var(--mod-reportes-fg);
+}
+.mod-cartera {
+  background: var(--mod-cartera-bg);
+  color: var(--mod-cartera-fg);
+}
+.mod-ventas {
+  background: var(--mod-ventas-bg);
+  color: var(--mod-ventas-fg);
+}
+
+/* Segunda fila centrada */
+@media (min-width: 768px) {
+  .modulos-grid > li {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/* Pie de página */
+.app-footer {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--mn-texto-suave);
+  padding: 20px 12px 24px;
+}
