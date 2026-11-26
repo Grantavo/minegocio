@@ -27,6 +27,12 @@
           <p class="login-subtitle">Control comercial para su negocio
           </p>
 
+<!-- Mensaje de error o éxito que aparece al enviar el formulario -->
+          <div id="mensajeLogin" class="alert d-none" role="alert">
+  <strong id="avisoTitulo"></strong>
+  <div id="avisoTexto"></div>
+</div>
+
           <!-- novalidate: la validación la hacemos con Bootstrap y JavaScript -->
           <form id="formLogin" novalidate>
             <!-- Campo usuario (mb-3 = margen abajo) -->
@@ -59,7 +65,7 @@
               Ingresar
             </button>
           </form>
-        </section>
+        </div>
       </main>
 
       <footer class="app-footer">
